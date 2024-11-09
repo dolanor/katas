@@ -13,13 +13,7 @@ func TestGridEmpty(t *testing.T) {
 	grid := NewGrid()
 	got := grid.String()
 
-	if got != exp {
-		t.Fatalf(`got:
-%s
-
-exp:
-%s`, got, exp)
-	}
+	assert(t, got, exp)
 }
 
 func TestGridRule1(t *testing.T) {
@@ -34,13 +28,7 @@ func TestGridRule1(t *testing.T) {
 	grid.Init(true, true)
 
 	got := grid.String()
-	if got != exp {
-		t.Fatalf(`got:
-%s
-
-exp:
-%s`, got, exp)
-	}
+	assert(t, got, exp)
 }
 
 func TestGridRule1_2(t *testing.T) {
@@ -55,6 +43,10 @@ func TestGridRule1_2(t *testing.T) {
 	grid.Init(true, true, true)
 
 	got := grid.String()
+	assert(t, got, exp)
+}
+
+func assert(t *testing.T, got, exp string) {
 	if got != exp {
 		t.Fatalf(`got:
 %s
@@ -62,4 +54,5 @@ func TestGridRule1_2(t *testing.T) {
 exp:
 %s`, got, exp)
 	}
+
 }
