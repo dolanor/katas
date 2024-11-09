@@ -1,10 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"log"
-)
-
 func NewGrid() game {
 	return MatrixToGame(NewMatrix())
 }
@@ -25,7 +20,6 @@ func MatrixToGame(m matrix) game {
 		g[i] = make([]rune, 5)
 		for c, cell := range line {
 			g[i][c] = itocell(cell)
-			fmt.Println(g[i][c])
 		}
 	}
 	return g
@@ -33,11 +27,9 @@ func MatrixToGame(m matrix) game {
 
 func itocell(i int) rune {
 	if i == 0 {
-		log.Println("0")
-		return '·'
+		return '\u00b7'
 	} else {
 
-		log.Println("1")
 		return '\u25a1'
 	}
 }
@@ -47,12 +39,12 @@ type matrix [][]int
 type game [][]rune
 
 func (g game) String() string {
-	var b []byte
+	var b []rune
 	for _, line := range g {
+		b = append(b, rune('\n'))
 		for _, cell := range line {
-			b = append(b, byte(cell))
+			b = append(b, rune(cell))
 		}
-		b = append(b, byte('\n'))
 	}
 	return string(b)
 }
