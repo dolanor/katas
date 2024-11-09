@@ -16,3 +16,7 @@ func (g Grid) String() string {
 ·····
 ·····`
 }
+
+func (g *Grid) Init(b ...bool) {
+	g.boxes = b
+}
