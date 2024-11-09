@@ -28,5 +28,7 @@ func (g Grid) String() string {
 }
 
 func (g *Grid) Init(b ...bool) {
-	g.boxes = b
+	for i, v := range b {
+		g.boxes[i] = v
+	}
 }
