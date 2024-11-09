@@ -29,10 +29,11 @@ func TestGridRule1(t *testing.T) {
 ·····
 ·····
 ·····`
+
 	grid := NewGrid()
 	grid.Init(true, true)
 
-	got := grid
+	got := grid.String()
 	if got != exp {
 		t.Fatalf(`got:
 %s
