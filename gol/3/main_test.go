@@ -57,7 +57,9 @@ func TestGridRule2(t *testing.T) {
 	grid := NewGrid()
 	grid.Init(true, true, true, false, false,
 		true, true)
-	_ = exp
+
+	got := grid.String()
+	assert(t, got, exp)
 }
 
 func assert(t *testing.T, got, exp string) {
