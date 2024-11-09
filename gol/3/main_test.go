@@ -26,6 +26,7 @@ func TestGridRule1(t *testing.T) {
 
 	grid := NewGrid()
 	grid.Init(true, true)
+	grid.Next()
 
 	got := grid.String()
 	assert(t, got, exp)

@@ -32,3 +32,7 @@ func (g *Grid) Init(b ...bool) {
 		g.boxes[i] = v
 	}
 }
+
+func (g *Grid) Next() {
+
+}
