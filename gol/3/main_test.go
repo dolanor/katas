@@ -34,14 +34,14 @@ func TestGridRule1(t *testing.T) {
 
 func TestGridRule1_2(t *testing.T) {
 	exp := `
-111··
 ·····
+·11··
 ·····
 ·····
 ·····`
 
 	grid := NewGrid()
-	grid.Init(true, true, true)
+	grid.Init(false, false, false, false, false, false, true, true)
 
 	got := grid.String()
 	assert(t, got, exp)

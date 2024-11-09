@@ -34,5 +34,10 @@ func (g *Grid) Init(b ...bool) {
 }
 
 func (g *Grid) Next() {
+	for i, b := range g.boxes {
+		_, _ = i, b
+	}
+}
 
+func numNeighbour(g Grid, i int) {
 }
