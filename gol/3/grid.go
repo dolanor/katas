@@ -2,11 +2,13 @@ package main
 
 type Grid struct {
 	boxes []bool
+	width int
 }
 
 func NewGrid() Grid {
 	return Grid{
 		boxes: make([]bool, 25),
+		width: 5,
 	}
 }
 
@@ -40,4 +42,14 @@ func (g *Grid) Next() {
 }
 
 func numNeighbour(g Grid, i int) {
+	nw := i - 1 - g.width
+	n := i - g.width
+	ne := i + 1 - g.width
+	w := i - 1
+	e := i + 1
+	sw := i - 1 + g.width
+	s := i + g.width
+	se := i + 1 + g.width
+
+	_, _, _, _, _, _, _, _ = nw, n, ne, w, e, sw, s, se
 }
