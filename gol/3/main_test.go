@@ -63,6 +63,7 @@ func TestGridRule2(t *testing.T) {
 }
 
 func assert(t *testing.T, got, exp string) {
+	t.Helper()
 	if got != exp {
 		t.Fatalf(`got:
 %s
