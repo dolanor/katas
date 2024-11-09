@@ -47,6 +47,19 @@ func TestGridRule1_2(t *testing.T) {
 	assert(t, got, exp)
 }
 
+func TestGridRule2(t *testing.T) {
+	exp := `
+1·1··
+1·1··
+·····
+·····
+·····`
+	grid := NewGrid()
+	grid.Init(true, true, true, false, false,
+		true, true)
+	_ = exp
+}
+
 func assert(t *testing.T, got, exp string) {
 	if got != exp {
 		t.Fatalf(`got:
