@@ -42,3 +42,24 @@ exp:
 %s`, got, exp)
 	}
 }
+
+func TestGridRule1_2(t *testing.T) {
+	exp := `
+111··
+·····
+·····
+·····
+·····`
+
+	grid := NewGrid()
+	grid.Init(true, true, true)
+
+	got := grid.String()
+	if got != exp {
+		t.Fatalf(`got:
+%s
+
+exp:
+%s`, got, exp)
+	}
+}
